@@ -1,19 +1,13 @@
 Package.describe({
-  "summary": "Load Testing for Meteor",
+  "summary": "Load Testing Framework for Meteor",
   "version": "1.0.0",
-  "git": "https://github.com/meteorhacks/meteor-shower-agent.git",
-  "name": "meteorhacks:meteor-shower"
+  "git": "https://github.com/meteorhacks/meteor-down.git",
+  "name": "meteorhacks:meteor-down"
 });
 
 Package.on_use(function(api) {
   configurePackage(api);
-  api.export(['MeteorShower']);
-});
-
-Package.on_test(function(api) {
-  configurePackage(api);
-  api.use(['accounts-base', 'tinytest', 'test-helpers']);
-  api.add_files('meteor-shower-tests.js');
+  api.export(['MeteorDown']);
 });
 
 function configurePackage(api) {
@@ -22,5 +16,5 @@ function configurePackage(api) {
   }
 
   api.use('livedata');
-  api.add_files('meteor-shower.js', 'server');
+  api.add_files('meteor-down.js', 'server');
 }
