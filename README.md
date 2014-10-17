@@ -1,30 +1,15 @@
 MeteorDown
 ============
 
-MeteorDown is a load testing framework for Meteor.
+Meteor side package for MeteorDown load testing framework. To perform a load test, install the smart package and run meteor with `METEOR_DOWN_KEY` environment variable.
 
-**Setup the Agent**
+    meteor add meteorhacks:meteor-down
+    export METEOR_DOWN_KEY='YOUR_SUPER_SECRET_KEY'
+    meteor
 
-  - Install the smart package `meteorhacks:meteor-down`
-  - Initialize with `MeteorDown.init('SECRET_KEY')`
+Note
+====
 
-**Writing Tests**
+This smart package acts as a backdoor to allow user logins without passwords. This can be useful to imitate real users when testing. Value of `METEOR_DOWN_KEY` is required to do this but it's best to have this package installed only whlile running a load test.
 
-  - Install mdown npm module globally `npm -g i mdown`
-  - Run your scripts with `mdown my-load-test.js`
-
-**Example Script**
-
-    var mdown = new MeteorDown(function (error, client) {
-      client.call('add', x, y, function (err, res) {
-        console.log(x+' + '+y+' is '+res);
-        client.kill();
-      });
-    })
-
-    mdown.run({
-      concurrency: 10,
-      url: 'http://localhost:3000',
-      key: 'SECRET_ID',
-      auth: {userId: ['JydhwL4cCRWvt3TiY', 'bg9MZZwFSf8EsFJM4']}
-    });
+To run tests, checkout [mdown](https://github.com/meteorhacks/mdown)
