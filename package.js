@@ -17,4 +17,5 @@ function configurePackage(api) {
 
   api.use('livedata');
   api.add_files('meteor-down.js', 'server');
+  api.add_files('autorun.js', 'server');
 }
