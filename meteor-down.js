@@ -5,16 +5,16 @@ Meteor.methods({
     check(params, Object);
 
     if(!MeteorDown.key) {
-      throw new Meteor.Error('Please initialize MeteorDown on the server with MeteorDown.init(secret_key) before using it');
+      throw new Error('Please set METEOR_DOWN_KEY environment variable');
     }
 
     if(MeteorDown.key !== key) {
-      throw new Meteor.Error('Incorrect Key');
+      throw new Error('Incorrect METEOR_DOWN_KEY');
     }
 
     var user = MeteorDown.login(params);
     if(!user) {
-      throw new Meteor.Error('Incorrect User Info');
+      throw new Error('Incorrect User Info', params);
     }
 
     this.setUserId(user._id);
