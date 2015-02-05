@@ -9,4 +9,4 @@ Meteor side package for MeteorDown load testing framework. To perform a load tes
 
 This smart package acts as a backdoor to allow user logins without passwords. This can be useful to imitate real users when testing. Value of `METEOR_DOWN_KEY` is required to do this but it's best to have this package installed only whlile running a load test.
 
-To run tests, checkout [mdown](https://github.com/meteorhacks/mdown)
+To run tests, checkout [meteor-down](https://github.com/meteorhacks/meteor-down)
