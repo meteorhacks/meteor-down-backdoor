@@ -1,6 +1,6 @@
 Package.describe({
   "summary": "Load Testing Framework for Meteor",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "git": "https://github.com/meteorhacks/meteor-down-backdoor.git",
   "name": "meteorhacks:meteor-down"
 });
